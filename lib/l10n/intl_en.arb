@@ -1,0 +1,10 @@
+{
+    "homeScreen": "Home screen",
+    "validURL": "Set valid API base URL in order to continue",
+    "count": "Start counting process",
+    "processScreen": "Process screen",
+    "calculation": "All calculation has finished, you can send your results to server",
+    "send": "Send results to server",
+    "resultScreen": "Result list screen",
+    "previewScreen": "Preview screen"
+}
