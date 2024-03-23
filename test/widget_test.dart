@@ -7,13 +7,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:webspark_shortest_way/shortest_way.dart';
 
-import 'package:webspark_shortest_way/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(ShortestWay());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
