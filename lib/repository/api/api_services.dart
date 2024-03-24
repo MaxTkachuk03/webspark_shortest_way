@@ -46,26 +46,27 @@ class ApiServices extends AbstractApiServices {
 
   @override
   Future<void> getField(List<WayApi> url) async {
-    List<String> modifiedDataList = [];
+    List<List<String>> modifiedDataList = [];
     List<String> characters = [];
 
+    //final data = await getApi(url);
+    //for (int j = 0;j < url.length; j++) {
     final data = url[0];
     final List<String> list = data.field;
 
     for (String str in list) {
       characters = str.split('');
+      List<String> group = [];
       for (int i = 0; i < characters.length; i += 3) {
-        modifiedDataList.add(characters.sublist(i, i + 3).join());
+        group.add(characters.sublist(i, i + 3).join());
       }
-      
+      modifiedDataList.add(group);
     }
     // }
 
     print(modifiedDataList);
     print("------");
-    print(characters[0]);
-    print("------");
-
+    print(characters[2]);
     //final dataRaw = data['data'] as Map<String, dynamic>;
 
     //  final coinData = dataRaw["field"] as Map<String, dynamic>;
