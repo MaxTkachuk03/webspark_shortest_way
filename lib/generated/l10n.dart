@@ -129,6 +129,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Please enter a URL`
+  String get enter {
+    return Intl.message(
+      'Please enter a URL',
+      name: 'enter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid URL`
+  String get invalid {
+    return Intl.message(
+      'Invalid URL',
+      name: 'invalid',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

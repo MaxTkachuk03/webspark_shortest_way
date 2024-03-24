@@ -25,7 +25,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "calculation": MessageLookupByLibrary.simpleMessage(
             "All calculation has finished, you can send your results to server"),
         "count": MessageLookupByLibrary.simpleMessage("Start counting process"),
+        "enter": MessageLookupByLibrary.simpleMessage("Please enter a URL"),
         "homeScreen": MessageLookupByLibrary.simpleMessage("Home screen"),
+        "invalid": MessageLookupByLibrary.simpleMessage("Invalid URL"),
         "previewScreen": MessageLookupByLibrary.simpleMessage("Preview screen"),
         "processScreen": MessageLookupByLibrary.simpleMessage("Process screen"),
         "resultScreen":

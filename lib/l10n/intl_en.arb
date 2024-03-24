@@ -6,5 +6,8 @@
     "calculation": "All calculation has finished, you can send your results to server",
     "send": "Send results to server",
     "resultScreen": "Result list screen",
-    "previewScreen": "Preview screen"
+    "previewScreen": "Preview screen",
+
+    "enter": "Please enter a URL",
+    "invalid" : "Invalid URL"
 }

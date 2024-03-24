@@ -1,7 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:webspark_shortest_way/bloc/save_url/save_url_bloc.dart';
 import 'package:webspark_shortest_way/generated/l10n.dart';
 import 'package:webspark_shortest_way/pages/pages.dart';
+import 'package:webspark_shortest_way/repository/repository.dart';
 import 'package:webspark_shortest_way/resources/resources.dart';
 import 'package:webspark_shortest_way/router/router.dart';
 import 'package:webspark_shortest_way/widgets/widgets.dart';
@@ -15,6 +18,16 @@ class ProcessPage extends StatefulWidget {
 }
 
 class _ProcessPageState extends State<ProcessPage> {
+  final urlBloc = SaveUrlBloc(GetIt.I<AbstractLocal>());
+
+  double countProcess = 0.6;
+
+  @override
+  void initState() {
+    print(urlBloc.saveUrlLocal.getURL());
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -44,21 +57,23 @@ class _ProcessPageState extends State<ProcessPage> {
             S.of(context).calculation,
             textAlign: TextAlign.center,
           ),
-          Text(
-            "100%",
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 16.0),
+          CircularProgressIndicatorWithPercentage(
+            strokeWidth: 5,
+            radius: 50,
+            value: countProcess,
           ),
           const Spacer(),
-          AppButton(
-            text: S.of(context).send,
-            onPressed: () {
-              AutoRouter.of(context).push(const ResultListRoute());
-            },
-          ),
-          const SizedBox(
-            height: 10.0,
-          ),
+          countProcess == 1
+              ? Padding(
+                  padding: const EdgeInsets.only(bottom: 10.0),
+                  child: AppButton(
+                    text: S.of(context).send,
+                    onPressed: () {
+                      AutoRouter.of(context).push(const ResultListRoute());
+                    },
+                  ),
+                )
+              : Container(),
         ],
       ),
     );
